@@ -1,0 +1,158 @@
+%%%%%%%%%%%%  v2.0.0-beta  %%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+\setlength{\topsep}{0pt}\setlength{\parskip}{8.04pt}
+\setlength{\parindent}{0pt}
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.3}
+
+
+%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\begin{Center}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Pi ($ \pi $ )}\par}
+\end{Center}\par
+
+\begin{justify}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 1. [20 Marks]}\par}
+\end{justify}\par
+
+\begin{justify}
+\href{https://www.wonderopolis.org/wonder/what-is-pi}{Pi} (represented as  $ \pi $ ) is the ratio of a circle's \href{https://www.wonderopolis.org/wonder/what-is-pi}{circumference} to its \href{https://www.wonderopolis.org/wonder/what-is-pi}{diameter}. The value of pi remains same regardless of the size of the circle. So, for any circle, dividing its \href{https://www.wonderopolis.org/wonder/what-is-pi}{circumference} by its \href{https://www.wonderopolis.org/wonder/what-is-pi}{diameter} will give us the exact same value i.e. 3.14159$ \ldots $  Being an irrational number, it never ends and its value cannot be represented as a simple fraction. Although 22/7 is used generally that gives the result that is close to $ \pi $  [1].  Most calculators have a button to enter the value of Pi directly. Using the calculator Pi button is better, because it inputs it to the greatest number of decimal places that the calculator is capable of.
+\end{justify}\par
+
+\begin{justify}
+It plays a very prominent role in the area of mathematics. $ \Pi $  appears in formula for areas and volumes of many geometrical shapes based on circles such as spheres, cones etc. Trigonometric functions rely on angles and angles are measured in radians. A complete circle spans an angle of 2 $ \pi $ . It is also used in Cauchy’s distribution which is a probability density function. Other than these, $ \pi $  is used in Fourier Series, Gaussian Integrals, Topology, Vector Calculus etc [1].
+\end{justify}\par
+
+\begin{justify}
+Apart from mathematics, $ \pi $  can be used in other natural phenomena. It can measure things like ocean waves, light waves, sound waves, river bends, radioactive particle distribution etc.
+\end{justify}\par
+
+\begin{justify}
+\textbf{Other applications of pi-}
+\end{justify}\par
+
+\begin{itemize}
+	\item Electrical engineers used pi to solve problems for electrical applications.\par
+
+	\item Statisticians use it for tracking population dynamics. \par
+
+	\item Medicine benefits from pi when studying structure of the eye.\par
+
+	\item Clock designers use it for designing pendulums for clocks.\par
+
+	\item Aircraft designers use it for calculating areas of the skin of the aircraft [2].
+\end{itemize}\par
+
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{Some of the characteristics that make $ \pi $  unique from other irrational numbers-}
+\end{justify}\par
+
+\begin{justify}
+An interesting thing about $ \pi $  is that there are no repeating patterns in digits of it. It is \textbf{transcendental} and not algebraic. $ \Pi $  is special because it describes the geometry of circles. Any statement about pi that has substance relates it to the circle, and to prove irrationality, transcendentalism and normality, we have to relate pi to the circle in a way that gives us these results [3].  The beauty of pi, in part, is that it puts infinity within reach. Pi touches infinity in other ways. For example, there are astonishing formulas in which an endless procession of smaller and smaller numbers adds up to pi. One of the earliest such infinite series to be discovered says that pi equals four times the sum 1 – \textsuperscript{1}⁄\textsubscript{3} + \textsuperscript{1}⁄\textsubscript{5} – \textsuperscript{1}⁄\textsubscript{7} + \textsuperscript{1}⁄\textsubscript{9} – \textsuperscript{1}⁄\textsubscript{11} + $ \cdots $ . It connects all odd numbers to pi, thereby also linking number theory to circles and geometry. In this way, pi joins two seemingly separate mathematical universes [4]. Its ubiquity goes beyond mathematics. This number crops up in the real world too [5].
+\end{justify}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\printbibliography
+\end{document}
