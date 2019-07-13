@@ -1,0 +1,24 @@
+Questions on pi-
+1.	Which is your favourite irrational number?
+2.	How often do you use pi?
+3.	Tell me a few interesting facts about pi?
+4.	Why is pi important?
+5.	Will it make a difference if we stop using pi? 
+6.	Why pi does not have repeating patterns?
+7.      Is there any specific digit that occurs least frequently in pi? If yes, which one?
+8.	Why do we use pi to calculate circumference or area of a circle?
+9.	Why is pi defined as a ratio of two rational numbers if it is an irrational number?
+10.	How many formulas for pi have evolved throughout the mathematical history?
+	
+
+
+
+
+
+
+
+[1] https://en.wikipedia.org/wiki/Pi#Role_and_characterizations_in_mathematics
+[2] https://amazingarchimedes.weebly.com/real-life-application-of-pi.html
+[3] https://www.reddit.com/r/askscience/comments/48vxug/as_an_irrational_number_what_makes_pi_different/
+[4] https://www.newyorker.com/tech/annals-of-technology/pi-day-why-pi-matters
+[5] https://www.livescience.com/34132-what-makes-pi-special.html
