@@ -11,10 +11,13 @@ public class RecordKeeping
         value=value.toUpperCase();
         while(value.equals("ON"))
         {
+        System.out.println("Enter the first number");
         String num1=sc.nextLine();
+        System.out.println("Enter the second number");
         String num2=sc.nextLine();
         double n1=Double.parseDouble(num1);
         double n2=Double.parseDouble(num2);
+        System.out.println("Enter your choice of operation from +,-,*,/");
         String op=sc.nextLine();
         double result;
         if(op.equals("+"))
@@ -41,11 +44,15 @@ public class RecordKeeping
             System.out.println(result);
             al.add(result);
         }
+        System.out.println("Press R to see the record or C to continue or OFF to turn off the calculator");
         String input=sc.nextLine();
+        input=input.toUpperCase();
         if(input.equals("R"))
         {
             System.out.println(al);
+            System.out.println("Press C to continue or OFF to turn off the calculator");
             String input2=sc.nextLine();
+            input2=input2.toUpperCase();
             if(input2.equals("C"))
             {
                 value="ON";
