@@ -66,6 +66,11 @@ public class Precision
             System.out.println("3.1415926535");
             result=3.1415926535;
         }
+        System.out.println("Press AREA to calculate it");
+        String s=sc.nextLine();
+        s=s.toLowerCase();
+        if(s.equals("area"))
+        {
         System.out.println("Enter the radius");
         String radius=sc.nextLine();
         double r=Double.parseDouble(radius);
@@ -77,6 +82,7 @@ public class Precision
         else
         {
             System.out.println("Invalid input");
+        }
         }
         }
         
