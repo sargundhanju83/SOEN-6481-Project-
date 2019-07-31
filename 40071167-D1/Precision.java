@@ -4,7 +4,7 @@ public class Precision
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Press pi");
+        System.out.println("Press pi or π");
         String str=sc.nextLine();
         str=str.toLowerCase();
         if(str.equals("pi"))
