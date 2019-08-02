@@ -1,0 +1,879 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[backend=biber,
+style=numeric,
+sorting=none,
+isbn=false,
+doi=false,
+url=false,
+]{biblatex}\addbibresource{bibliography.bib}
+
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
+\tikzset{>={Latex[width=1.5mm,length=2mm]}}
+\usepackage{flowchart}\usepackage[paperheight=11.0in,paperwidth=8.5in,left=1.0in,right=1.0in,top=1.0in,bottom=1.0in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\TabPositions{0.5in,1.0in,1.5in,2.0in,2.5in,3.0in,3.5in,4.0in,4.5in,5.0in,5.5in,6.0in,}
+
+\urlstyle{same}
+
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+		\setlist[enumerate,1]{label=\arabic*)}
+		\setlist[enumerate,2]{label=\alph*)}
+		\setlist[enumerate,3]{label=(\roman*)}
+		\setlist[enumerate,4]{label=(\arabic*)}
+		\setlist[enumerate,5]{label=(\Alph*)}
+		\setlist[enumerate,6]{label=(\Roman*)}
+		\setlist[enumerate,7]{label=\arabic*}
+		\setlist[enumerate,8]{label=\alph*}
+		\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+		\setlist[itemize]{label=$\cdot$}
+		\setlist[itemize,1]{label=\textbullet}
+		\setlist[itemize,2]{label=$\circ$}
+		\setlist[itemize,3]{label=$\ast$}
+		\setlist[itemize,4]{label=$\dagger$}
+		\setlist[itemize,5]{label=$\triangleright$}
+		\setlist[itemize,6]{label=$\bigstar$}
+		\setlist[itemize,7]{label=$\blacklozenge$}
+		\setlist[itemize,8]{label=$\prime$}
+
+\setlength{\topsep}{0pt}\setlength{\parskip}{8.04pt}
+\setlength{\parindent}{0pt}
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.3}
+
+
+%%%%%%%%%%%%%%%%%%%% Document code starts here %%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+\begin{Center}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{SOEN 6481}\par}
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{Software Requirement Specification}\par}
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{Summer 2019}\par}
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{Deliverable 2}\par}
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{Eternity: Numbers}\par}
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{Center}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{Declaration}\par}
+\end{Center}\par
+
+
+\vspace{\baselineskip}
+\begin{justify}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{I have read and understood the Fairness Protocol and Communal Work Protocol, and agree to abide by the policies therein, without any exception under any circumstances, whatsoever.}\par}
+\end{justify}\par
+
+
+\vspace{\baselineskip}
+\begin{justify}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  By: Sargun Kaur Dhanju}\par}
+\end{justify}\par
+
+\begin{justify}
+{\fontsize{16pt}{19.2pt}\selectfont \textbf{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  (40071167)}\par}
+\end{justify}\par
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\begin{justify}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Table of Contents}\par}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 1 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{0.39in}p{1.18in}p{0.39in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{S.no}}} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{Title}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{Page no.}}} \\
+\hhline{---}
+%row no:2
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{1.}}} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 6}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{3}}} \\
+\hhline{---}
+%row no:3
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.1}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{3}}} \\
+\hhline{---}
+%row no:4
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.2}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{3}}} \\
+\hhline{---}
+%row no:5
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.3}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{4}}} \\
+\hhline{---}
+%row no:6
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.4}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{4}}} \\
+\hhline{---}
+%row no:7
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.5}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{4}}} \\
+\hhline{---}
+%row no:8
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.6}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{5}}} \\
+\hhline{---}
+%row no:9
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.7}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6}}} \\
+\hhline{---}
+%row no:10
+\multicolumn{1}{|p{0.39in}}{} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6.8}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6}}} \\
+\hhline{---}
+%row no:11
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{2.}}} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 7}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{7}}} \\
+\hhline{---}
+%row no:12
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{3.}}} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 8}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{7}}} \\
+\hhline{---}
+%row no:13
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{4.}}} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{Glossary}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{8}}} \\
+\hhline{---}
+%row no:14
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{5.}}} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{References}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{8}}} \\
+\hhline{---}
+%row no:15
+\multicolumn{1}{|p{0.39in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{6}}.} & 
+\multicolumn{1}{|p{1.18in}}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{GitHub Link}}} & 
+\multicolumn{1}{|p{0.39in}|}{{\fontsize{14pt}{16.8pt}\selectfont \textbf{8}}} \\
+\hhline{---}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 1 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+\tab 
+\vspace{\baselineskip}
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\begin{justify}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 6. [70 Marks]}\par}
+\end{justify}\par
+
+\begin{justify}
+\textbf{6.1 Value of $ \pi $ }
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 2 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_01} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{As a user, I want my calculator to display the value of $ \pi $  till 10 decimal places to support usability. } \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{- } \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{Given that I have to determine the value of $ \pi $ . \par \begin{itemize}
+	\item I will press the button for $ \pi $ .
+\end{itemize} \par \begin{itemize}
+	\item The value for $ \pi $  will be displayed till 15 decimal places i.e. 3.1415926535.
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Should Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{1} \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 2 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{6.2 Circumference Calculation}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 3 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_02} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{As a user, I should be able to calculate the circumference directly by just providing the radius of the circle. This can help to enhance efficiency if I have to use formula of circumference in my work.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{Number entered by the user for the radius should not be negative. } \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{Given that I have to calculate the circumference of a circle with radius 3.  \par \begin{itemize}
+	\item I will press the button $``$CRF$"$ . \par 	\item I will press 3. \par 	\item The result $``$18.84$"$  (2$\ast$ 3.14$\ast$ r) will be displayed.
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Must Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{3} \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 3 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{6.3 Precision} 
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 4 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_03} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{\cellcolor[HTML]{FFFFFF}As a user, I want my calculator to allow me to choose the precision of \textcolor[HTML]{222222}{$ \pi $  }so that I can use it as per my requirement.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{-} \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{\cellcolor[HTML]{FFFFFF}Given that I have to calculate the area of circle and this will use $ \pi $ . I should be able to choose the value of $ \pi $  up to 2 decimal places as it will give me the required result \par \begin{itemize}
+	\item While using the formula, I will press $ \pi $ . \par 	\item I will press $``$P$"$  to choose its precision. \par 	\item  I will choose 2 and therefore will get the value 3.14 that I can use to calculate the area.
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Must Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{1} \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 4 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{6.4 Operator Selection}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 5 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_04} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{As a user, if I enter 2 or more operators consecutively, the operation performed should be of the last operator to enhance usability.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{There must be at least 2 operators occurring consecutively in the expression.} \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{Given that I have entered 3-+3. The result should be calculated as 3+3 i.e. 6.} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Must Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{1} \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 5 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{6.5 Edition}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 6 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_05} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{My calculator should allow edition on the operator or operand of the current computation until the result is displayed so that any mistake can be corrected.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{At least one operator or operand must be entered.} \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{Given that I have to perform the following calculation $``$3+4$\ast$ 2$"$ .  \par \begin{itemize}
+	\item I will enter 3+4$\ast$ 2.
+\end{itemize} \par \begin{itemize}
+	\item Before pressing =, if I want to replace 4 with 5, I can do it.
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Must Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{1 } \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 6 ends here %%%%%%%%%%%%%%%%%%%%
+
+\begin{justify}
+\textbf{6.6 Record Keeping}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 7 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_06} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{As a user, I want my calculator to keep a record of all the computations till the calculator is turned off so that I can access the record and use it when needed.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{There must be at least one result for the record to exist.} \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{\begin{itemize}
+	\item To open the record, press $``$R$"$ . \par 	\item Record empty \par 	\item 3+4=7(stored in record) \par 5+5=10(stored in record) \par 4-2=2(stored in record) \par 	\item Press $``$R$"$ . \par 	\item 7,10,2 \par 	\item Calculator is turned off. \par 	\item After turning on the calculator, press $``$R$"$ . \par 	\item Record empty.
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Should Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{2 } \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 7 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{6.7 Record Deletion}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 8 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_07} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{As a user, I want my calculator to give me an option to delete the record of the computation that is not needed to save the memory.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{There must be at least 1 calculation in the record.} \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{\begin{itemize}
+	\item 3+4=7(stored in record) \par 5+5=10(stored in record) \par Press $``$DEL$"$ , (10 deleted from the record). \par 4-2=2(stored in record) \par 	\item Press $``$R$"$ . \par 	\item 7,2
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Should Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{2 } \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 8 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+\begin{justify}
+\textbf{6.8 Clear}
+\end{justify}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 9 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{1.47in}p{4.62in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{1.47in}}{\textbf{Identifier}} & 
+\multicolumn{1}{|p{4.62in}|}{EternityNumbers\_08} \\
+\hhline{--}
+%row no:2
+\multicolumn{1}{|p{1.47in}}{\textbf{Statement}} & 
+\multicolumn{1}{|p{4.62in}|}{As a user, I want my calculator to clear all the contents so that I can start a new calculation.} \\
+\hhline{--}
+%row no:3
+\multicolumn{1}{|p{1.47in}}{\textbf{Constraint}} & 
+\multicolumn{1}{|p{4.62in}|}{There must be at least 1 operator, operand or a calculation that can be cleared.} \\
+\hhline{--}
+%row no:4
+\multicolumn{1}{|p{1.47in}}{\textbf{Acceptance Criteria}} & 
+\multicolumn{1}{|p{4.62in}|}{\begin{itemize}
+	\item Given that I enter the following calculation, 3+4. \par 	\item 7 will be displayed. \par 	\item Press $``$CLR$"$ . \par 	\item 0 will be displayed.
+\end{itemize}} \\
+\hhline{--}
+%row no:5
+\multicolumn{1}{|p{1.47in}}{\textbf{Priority}} & 
+\multicolumn{1}{|p{4.62in}|}{Must Have} \\
+\hhline{--}
+%row no:6
+\multicolumn{1}{|p{1.47in}}{\textbf{Estimate}} & 
+\multicolumn{1}{|p{4.62in}|}{1 } \\
+\hhline{--}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 9 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 7. [10 Marks]}\par}\par
+
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 10 starts here %%%%%%%%%%%%%%%%%%%%
+
+
+\begin{table}[H]
+ 			\centering
+\begin{tabular}{p{0.36in}p{1.6in}p{1.37in}p{2.06in}}
+\hline
+%row no:1
+\multicolumn{1}{|p{0.36in}}{\textbf{Sno.}} & 
+\multicolumn{1}{|p{1.6in}}{\Centering \textbf{User Story Identifier}} & 
+\multicolumn{1}{|p{1.37in}}{\Centering \textbf{User Story Name}} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering \textbf{User Story Source}} \\
+\hhline{----}
+%row no:2
+\multicolumn{1}{|p{0.36in}}{\textbf{1}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers01} & 
+\multicolumn{1}{|p{1.37in}}{Value of $ \pi $ } & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 1(Description of pi)} \\
+\hhline{----}
+%row no:3
+\multicolumn{1}{|p{0.36in}}{\textbf{2}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers02} & 
+\multicolumn{1}{|p{1.37in}}{Circumference Calculation} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 2 (Interview)} \\
+\hhline{----}
+%row no:4
+\multicolumn{1}{|p{0.36in}}{\textbf{3}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers03} & 
+\multicolumn{1}{|p{1.37in}}{Precision} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Dr.Pankaj Kamthan (kamthan@cse.concordia.ca)} \\
+\hhline{----}
+%row no:5
+\multicolumn{1}{|p{0.36in}}{\textbf{4}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers04} & 
+\multicolumn{1}{|p{1.37in}}{Operator Selection} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 5 (Use Case)} \\
+\hhline{----}
+%row no:6
+\multicolumn{1}{|p{0.36in}}{\textbf{5}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers05} & 
+\multicolumn{1}{|p{1.37in}}{Edition} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 5 (Use Case)} \\
+\hhline{----}
+%row no:7
+\multicolumn{1}{|p{0.36in}}{\textbf{6}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers06} & 
+\multicolumn{1}{|p{1.37in}}{Record Keeping} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 4 (Problem Domain Model)} \\
+\hhline{----}
+%row no:8
+\multicolumn{1}{|p{0.36in}}{\textbf{7}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers07} & 
+\multicolumn{1}{|p{1.37in}}{Record Deletion} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 5 (Use Case)} \\
+\hhline{----}
+%row no:9
+\multicolumn{1}{|p{0.36in}}{\textbf{8}} & 
+\multicolumn{1}{|p{1.6in}}{Eternity\_Numbers08} & 
+\multicolumn{1}{|p{1.37in}}{Clear} & 
+\multicolumn{1}{|p{2.06in}|}{\Centering Problem 5 (Use Case)} \\
+\hhline{----}
+
+\end{tabular}
+ \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%% Table No: 10 ends here %%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{\baselineskip}
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Problem 8. [40 Marks]}\par}\par
+
+1). User Story 2 is implemented in the file \textbf{CircumferenceCalculation.java}. It represents the functionality of circumference. In this, circumference can be easily calculated by a person by just pressing the button $``$CRF$"$  (type CRF) and entering the radius of the circle (the radius has to be a positive number).\par
+
+2). User Story 3 is implemented in the file \textbf{Precision.java}. In this, the user will press the button $``$pi$"$  (type pi). According to User Story 1, the calculator can display the value of pi up to 10 decimal places. Therefore, the user can choose the precision of pi up to 10 decimal places and this can be done by pressing $``$P$"$  (type P). The user will then enter the precision that he/she wants to choose. (Enter a number). The value of pi up to the chosen precision will be displayed. The user can then perform the computation using this precision of pi. In this case, area of circle is calculated. The user will press the button for $``$Area$"$  (type Area) and then enter the radius of the circle (the radius has to be a positive number). The area of the circle will be displayed.\par
+
+3). User Story 6 is implemented in the file \textbf{RecordKeeping.java}. In this the user will turn on the calculator by pressing the $``$ON$"$  button (type ON) and then enter the 2 numbers to perform the computation. (The program shows the computations on just 2 numbers for now.) After entering the numbers, an operator can be chosen from $``$+$"$ ,$"$ -$``$, $``$/$"$  and $``$$\ast$ $"$ (Enter one of these.).After the computation is performed, the user can press $``$R$"$  to see the record, $``$C$"$  to continue the computations or $``$OFF$"$  to turn off the calculator (Type either one of them). If the user presses C, the user will continue to perform more computations, if OFF, then the calculator will be turned off and if R, the user can see all the computations that are performed after the calculator was turned on. The user is again given the option to turn off the calculator or to continue the computations.\par
+
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{Glossary}\par}\par
+
+1). User Story- In software development and product management, a user story is an informal, natural language description of one or more features of a software system. [2]\par
+
+2). Backward Traceability Matrix- The potential for tracing antecedent steps in a developmental path, which is not necessarily a chronological path.\par
+
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{References}\par}\par
+
+{\fontsize{10pt}{12.0pt}\selectfont [1]. P. Kamthan, Summer 2019, $``$Project Description$"$ , Department of Computer Science\par}\par
+
+{\fontsize{10pt}{12.0pt}\selectfont and Software Engineering, Concordia University.\par}\par
+
+{\fontsize{10pt}{12.0pt}\selectfont [2]. Wikipedia, User Story, 2015 [Online]. Available: \href{https://en.wikipedia.org/wiki/User_story}{https://en.wikipedia.org/wiki/User\_story}\par}\par
+
+{\fontsize{10pt}{12.0pt}\selectfont [3]. Wikipedia, Traceability Matrix, 2008 [Online]. Available: \href{https://en.wikipedia.org/wiki/Traceability_matrix}{https://en.wikipedia.org/wiki/Traceability\_matrix}\par}\par
+
+{\fontsize{14pt}{16.8pt}\selectfont \textbf{GitHub link}\par}\par
+
+{\fontsize{10pt}{12.0pt}\selectfont Available: \href{https://github.com/sargundhanju83/SOEN-6481-Project-}{https://github.com/sargundhanju83/SOEN-6481-Project-}\par}\par
+
+
+\vspace{\baselineskip}
+\begin{justify}
+ 
+\end{justify}\par
+
+\tab 
+\vspace{\baselineskip}
+\printbibliography
+\end{document}
